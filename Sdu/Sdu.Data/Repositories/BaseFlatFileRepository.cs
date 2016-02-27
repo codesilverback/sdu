@@ -5,11 +5,11 @@ namespace Sdu.Data.Repositories
 {
     public abstract class BaseFlatFileRepository<T> where T : class
     {
-        private FileProvider _fileProvider = null;
+        private IFileProvider _fileProvider = null;
 
-        public BaseFlatFileRepository(string filePath)
+        public BaseFlatFileRepository(IFileProvider fp)
         {
-            _fileProvider = new FileProvider(filePath);
+            _fileProvider = fp;
         }
 
         protected IEnumerable<T> LoadData(string[] fileContents)
@@ -26,6 +26,8 @@ namespace Sdu.Data.Repositories
             return result;
         }
 
+
+        
         public T ParseLine(string line)
         {
             var result = SplitLine(line);

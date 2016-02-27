@@ -10,7 +10,7 @@ namespace Sdu.Data.Repositories
     {
 
 
-       public PipeDelimitedDataRepository(string filePath):base(filePath)
+       public PipeDelimitedDataRepository(IFileProvider fp):base(fp)
        {
 
         }

@@ -43,6 +43,8 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseFlatFileRepository.cs" />
+    <Compile Include="Repositories\FileProvider.cs" />
+    <Compile Include="Repositories\IFileProvider.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PipeDelimitedDataRepository.cs" />
   </ItemGroup>

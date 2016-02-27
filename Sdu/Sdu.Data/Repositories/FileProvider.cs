@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sdu.Data.Repositories
 {
+    /// <summary>
+    /// class that basically just wraps a bunch of System.IO  
+    /// </summary>
     public class FileProvider : IFileProvider
     {
         string _filePath = String.Empty;
