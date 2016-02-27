@@ -46,6 +46,8 @@
     <Compile Include="Repositories\FileProvider.cs" />
     <Compile Include="Repositories\IFileProvider.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\SpaceDelimitedDataRepository.cs" />
+    <Compile Include="Repositories\CommaDelimitedDataRepository.cs" />
     <Compile Include="Repositories\PipeDelimitedDataRepository.cs" />
   </ItemGroup>
   <ItemGroup>

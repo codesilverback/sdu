@@ -367,13 +367,40 @@ namespace Sdu.DataUnitTests.Repositories
         }
 
         [Test()]
-        public void AsQueryableTests()
+        public void AsQueryableTests_Pipes()
         {
             var fp = new Moq.Mock<IFileProvider>();
 
             fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_Pipes);
 
             var sut = new PipeDelimitedDataRepository<Person>(fp.Object);
+            Assert.That(sut.AsQueryable().Count() == 100, String.Format("expected 100 rows, got {0}", sut.AsQueryable().Count()));
+
+        }
+
+
+        [Test()]
+        public void AsQueryableTests_Commas()
+        {
+            var fp = new Moq.Mock<IFileProvider>();
+
+            fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_CSV);
+
+            var sut = new CommaDelimitedDataRepository<Person>(fp.Object);
+            Assert.That(sut.AsQueryable().Count() == 100, String.Format("expected 100 rows, got {0}", sut.AsQueryable().Count()));
+
+
+
+        }
+
+        [Test()]
+        public void AsQueryableTests_Spaces()
+        {
+            var fp = new Moq.Mock<IFileProvider>();
+
+            fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_Spaces);
+
+            var sut = new SpaceDelimitedDataRepository<Person>(fp.Object);
             Assert.That(sut.AsQueryable().Count() == 100, String.Format("expected 100 rows, got {0}", sut.AsQueryable().Count()));
 
         }

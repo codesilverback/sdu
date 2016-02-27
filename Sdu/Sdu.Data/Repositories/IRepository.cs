@@ -9,8 +9,6 @@ namespace Sdu.Data.Repositories
     interface IRepository<T> where T :class
     {
         IQueryable<T> AsQueryable();
-        void Insert();
-//        void Delete();
-//        void Upate();
+        void Insert(T value); 
     }
 }

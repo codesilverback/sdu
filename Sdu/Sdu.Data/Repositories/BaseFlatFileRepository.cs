@@ -5,7 +5,7 @@ using System.Net;
 
 namespace Sdu.Data.Repositories
 {
-    public abstract class BaseFlatFileRepository<T> where T : class
+    public abstract class BaseFlatFileRepository<T> :IRepository<T> where T : class
     {
         private IFileProvider _fileProvider = null;
          
@@ -35,12 +35,17 @@ namespace Sdu.Data.Repositories
             return result;
         }
 
+        public void Insert(T value)
+        {
+            throw new NotImplementedException();
+        }
 
-        
-        public T ParseLine(string line)
+
+
+        protected T ParseLine(string line)
         {
             var result = SplitLine(line);
-            if (result[0] == "LastName")
+            if (result[0].Replace("\"","") == "LastName")
             {
                 //header row, skip it.
                 return null;
@@ -57,10 +62,10 @@ namespace Sdu.Data.Repositories
             //this is gross and bizarre and I don't like it.  But I really want to use IRepo<T>
             return new Models.Person()
             {
-                FirstName = result[0],
-                LastName = result[1],
-                Gender = result[2],
-                DateOfBirth = result[3]
+                FirstName = result[0].Replace("\"", ""),
+                LastName = result[1].Replace("\"", ""),
+                Gender = result[2].Replace("\"", ""),
+                DateOfBirth = result[3].Replace("\"", "")
             } as T;
         }
 
