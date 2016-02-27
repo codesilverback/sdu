@@ -12,11 +12,11 @@ namespace Sdu.Data.Repositories
        {
 
        }
+        
+        public override char Delimiter {
+            get { return ','; }
+        }
 
-       public override string[] SplitLine(string line)
-       {
-           return line.Split(',');
-       }
 
     }
 }

@@ -9,6 +9,8 @@ namespace Sdu.Data.Repositories
     {
         private IFileProvider _fileProvider = null;
          
+        
+        public abstract char Delimiter { get; }
          
         public BaseFlatFileRepository(IFileProvider fp)
         {
@@ -44,7 +46,7 @@ namespace Sdu.Data.Repositories
 
         protected T ParseLine(string line)
         {
-            var result = SplitLine(line);
+            var result = line.Split(this.Delimiter);
             if (result[0].CleanedUp() == "LastName")
             {
                 //header row, skip it.
@@ -70,6 +72,8 @@ namespace Sdu.Data.Repositories
             } as T;
         }
 
-        public abstract string[] SplitLine(string line);
+
+        
+        
     }
 }
