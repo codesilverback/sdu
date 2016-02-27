@@ -23,21 +23,21 @@ namespace Sdu.Data.IntegrationTests
         [TestFixtureSetUp]
         public void Setup()
         {
-            System.IO.File.Copy(@"..\..\Files\Spaces.txt", String.Format(@"..\..\Files\Spaces{0}.txt", _runId));
+            System.IO.File.Copy(@"..\..\Files\Spaces.txt", String.Format(@"..\..\Files\Spaces{0}.ignore", _runId));
         }
 
 
         [TestFixtureTearDown]
         public void Teardown()
         {
-            if (System.IO.File.Exists(String.Format(@"..\..\Files\Spaces{0}.txt", _runId)))
+            if (System.IO.File.Exists(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId)))
             {
-                System.IO.File.Delete(String.Format(@"..\..\Files\Spaces{0}.txt", _runId));
+                System.IO.File.Delete(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId));
             }
         }
 
         [Test]
-        [Ignore]
+  
         public void SimpleInsert()
         {
             var p = new Person()
@@ -50,7 +50,7 @@ namespace Sdu.Data.IntegrationTests
             };
              
 
-            var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(String.Format(@"..\..\Files\Spaces{0}.txt", _runId)));
+            var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId)));
             sut.Insert(p);
             Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 1);
             sut.Insert(p);

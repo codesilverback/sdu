@@ -23,7 +23,7 @@ namespace Sdu.Data.Repositories
         }
         public void AppendLineToFile(string line)
         {
-            System.IO.File.AppendAllLines(_filePath, new List<string>() { line });
+            System.IO.File.AppendAllLines(_filePath, new List<string>() { Environment.NewLine + line.Replace(Environment.NewLine,String.Empty) });
         }
     }
 }

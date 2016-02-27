@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Sdu.Data.Models;
 
 namespace Sdu.Data.Repositories
 {
@@ -39,14 +40,30 @@ namespace Sdu.Data.Repositories
 
         public void Insert(T value)
         {
-            throw new NotImplementedException();
+            _fileProvider.AppendLineToFile(this.BuildRow(value));
         }
 
+        public abstract string BuildRow(T value);
 
+        protected void ValidateAddInput(T value)
+        {
+            //again, totally repulsive, but I really want to use T and not make the repo for a particular type.
+
+            if (typeof(T) != typeof(Person))
+            {
+                throw new NotImplementedException(String.Format("repo only works for People, you provided {0}",
+                    typeof(T).Name));
+            }
+        }
 
         protected T ParseLine(string line)
         {
+            if (line == String.Empty)
+            {
+                return null;
+            }
             var result = line.Split(this.Delimiter);
+
             if (result[0].CleanedUp() == "LastName")
             {
                 //header row, skip it.
