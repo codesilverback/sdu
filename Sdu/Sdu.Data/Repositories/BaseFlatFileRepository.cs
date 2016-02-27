@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Sdu.Data.Repositories
 {
-    public  abstract class BaseFlatFileRepository<T> where T :class
+    public abstract class BaseFlatFileRepository<T> where T : class
     {
-        private string _filePath = string.Empty;
+        private FileProvider _fileProvider = null;
 
-        protected string[] LoadFileContents() {
-         return    System.IO.File.ReadAllLines(_filePath);
+        public BaseFlatFileRepository(string filePath)
+        {
+            _fileProvider = new FileProvider(filePath);
         }
 
-        protected void AppendLineToFile( string line) {
-            System.IO.File.AppendAllLines(_filePath, new List<string>() { line });
-        }
-
-        public IEnumerable<T> LoadData(string[] fileContents)
+        protected IEnumerable<T> LoadData(string[] fileContents)
         {
             var result = new List<T>();
-            foreach (var s in LoadFileContents())
+            foreach (var s in _fileProvider.LoadFileContents())
             {
                 var t = ParseLine(s);
                 if (t != null)

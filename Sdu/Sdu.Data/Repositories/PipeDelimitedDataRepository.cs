@@ -8,8 +8,14 @@ namespace Sdu.Data.Repositories
 {
    public  class PipeDelimitedDataRepository<T>:BaseFlatFileRepository<T>, IRepository<T> where T :class
     {
- 
-        public IQueryable<T> AsQueryable() {
+
+
+       public PipeDelimitedDataRepository(string filePath):base(filePath)
+       {
+
+        }
+
+       public IQueryable<T> AsQueryable() {
             throw new NotImplementedException();
         }
 

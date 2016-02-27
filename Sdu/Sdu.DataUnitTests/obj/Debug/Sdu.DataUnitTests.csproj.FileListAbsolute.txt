@@ -1,0 +1,9 @@
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\Sdu.DataUnitTests.dll
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\Sdu.DataUnitTests.pdb
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\nunit.framework.dll
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\Sdu.Data.dll
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\Sdu.Data.pdb
+c:\git\sdu\Sdu\Sdu.DataUnitTests\bin\Debug\nunit.framework.xml
+c:\git\sdu\Sdu\Sdu.DataUnitTests\obj\Debug\Sdu.DataUnitTests.csprojResolveAssemblyReference.cache
+c:\git\sdu\Sdu\Sdu.DataUnitTests\obj\Debug\Sdu.DataUnitTests.dll
+c:\git\sdu\Sdu\Sdu.DataUnitTests\obj\Debug\Sdu.DataUnitTests.pdb
