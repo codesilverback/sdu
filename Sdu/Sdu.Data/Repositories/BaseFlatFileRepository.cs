@@ -45,7 +45,7 @@ namespace Sdu.Data.Repositories
         protected T ParseLine(string line)
         {
             var result = SplitLine(line);
-            if (result[0].Replace("\"","") == "LastName")
+            if (result[0].CleanedUp() == "LastName")
             {
                 //header row, skip it.
                 return null;
@@ -62,10 +62,11 @@ namespace Sdu.Data.Repositories
             //this is gross and bizarre and I don't like it.  But I really want to use IRepo<T>
             return new Models.Person()
             {
-                FirstName = result[0].Replace("\"", ""),
-                LastName = result[1].Replace("\"", ""),
-                Gender = result[2].Replace("\"", ""),
-                DateOfBirth = result[3].Replace("\"", "")
+                LastName = result[0].CleanedUp(),
+                FirstName= result[1].CleanedUp(),
+                Gender = result[2].CleanedUp().ToLowerInvariant(),
+                FavoriteColor = result[3].CleanedUp().ToLowerInvariant(),
+                DateOfBirth = result[4].CleanedUp(),
             } as T;
         }
 

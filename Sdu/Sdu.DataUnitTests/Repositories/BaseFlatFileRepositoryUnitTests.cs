@@ -379,6 +379,45 @@ namespace Sdu.DataUnitTests.Repositories
         }
 
 
+
+        [Test()]
+        public void AsQueryableTests_Pipes_ActualData()
+        {
+            var fp = new Moq.Mock<IFileProvider>();
+
+            fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_Pipes);
+
+            var sut = new PipeDelimitedDataRepository<Person>(fp.Object);
+            Assert.That(sut.AsQueryable().First().FirstName=="Hillary" , String.Format("expected Hillary, , got {0}", sut.AsQueryable().First().FirstName));
+
+        }
+
+
+        [Test()]
+        public void AsQueryableTests_Comma_ActualData()
+        {
+            var fp = new Moq.Mock<IFileProvider>();
+
+            fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_CSV);
+
+            var sut = new CommaDelimitedDataRepository<Person>(fp.Object);
+            Assert.That(sut.AsQueryable().First().FirstName == "Hillary", String.Format("expected Hillary, , got {0}", sut.AsQueryable().First().FirstName));
+
+        }
+
+
+        [Test()]
+        public void AsQueryableTests_Space_ActualData()
+        {
+            var fp = new Moq.Mock<IFileProvider>();
+
+            fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_Spaces);
+
+            var sut = new SpaceDelimitedDataRepository<Person>(fp.Object);
+            Assert.That(sut.AsQueryable().First().FirstName == "Hillary", String.Format("expected Hillary, , got {0}", sut.AsQueryable().First().FirstName));
+
+        }
+
         [Test()]
         public void AsQueryableTests_Commas()
         {
