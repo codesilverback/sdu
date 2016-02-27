@@ -1,0 +1,1 @@
+If you can read this, it means that Git is configured on the home pc now.
