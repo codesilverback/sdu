@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 
 namespace Sdu.Data.Repositories
 {
     public abstract class BaseFlatFileRepository<T> where T : class
     {
         private IFileProvider _fileProvider = null;
-
+         
+         
         public BaseFlatFileRepository(IFileProvider fp)
         {
             _fileProvider = fp;
         }
 
-        protected IEnumerable<T> LoadData(string[] fileContents)
+        public IQueryable<T> AsQueryable()
+        {
+            return LoadData().AsQueryable();
+        }
+
+
+        protected IEnumerable<T> LoadData()
         {
             var result = new List<T>();
             foreach (var s in _fileProvider.LoadFileContents())
@@ -31,7 +40,7 @@ namespace Sdu.Data.Repositories
         public T ParseLine(string line)
         {
             var result = SplitLine(line);
-            if (result[0] == "FirstName")
+            if (result[0] == "LastName")
             {
                 //header row, skip it.
                 return null;

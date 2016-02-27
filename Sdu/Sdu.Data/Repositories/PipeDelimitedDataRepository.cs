@@ -13,11 +13,8 @@ namespace Sdu.Data.Repositories
        public PipeDelimitedDataRepository(IFileProvider fp):base(fp)
        {
 
-        }
+       }
 
-       public IQueryable<T> AsQueryable() {
-            throw new NotImplementedException();
-        }
 
         public void Add() {
             throw new NotImplementedException();
