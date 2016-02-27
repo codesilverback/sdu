@@ -7,9 +7,12 @@ using NUnit.Framework;
 namespace Sdu.Data.IntegrationTests
 {
     [TestFixture]
-    public class SpacesIntegrationTests
+    public class SpacesIntegrationTests :FileIntegrationTestsBase
     {
         private Guid _runId = System.Guid.NewGuid();
+       protected override string FileName{get { return "Spaces"; }
+        }
+
 
         [Test]
         public void SimpleNoQuotes()
@@ -20,22 +23,7 @@ namespace Sdu.Data.IntegrationTests
 
         }
 
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-            System.IO.File.Copy(@"..\..\Files\Spaces.txt", String.Format(@"..\..\Files\Spaces{0}.ignore", _runId));
-        }
-
-
-        [TestFixtureTearDown]
-        public void Teardown()
-        {
-            if (System.IO.File.Exists(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId)))
-            {
-                System.IO.File.Delete(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId));
-            }
-        }
-
+        
         [Test]
   
         public void SimpleInsert()
@@ -48,9 +36,9 @@ namespace Sdu.Data.IntegrationTests
                 FavoriteColor = "indigo",
                 DateOfBirth = "10/22/2016"
             };
-             
 
-            var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(String.Format(@"..\..\Files\Spaces{0}.ignore", _runId)));
+
+            var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(RunFilePath));
             sut.Insert(p);
             Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 1);
             sut.Insert(p);

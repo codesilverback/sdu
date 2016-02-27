@@ -37,6 +37,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileIntegrationTestsBase.cs" />
     <Compile Include="SpacesIntegrationTests.cs" />
     <Compile Include="CommaIntegrationTests.cs" />
     <Compile Include="PipeIntegrationTests.cs" />
