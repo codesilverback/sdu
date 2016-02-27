@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Sdu.Domain
+namespace Sdu.WebApi.Models
 {
-    public class Person
+    public class Record
     {
-        public enum GenderEnum
-        {
-            Male,
-            Female
-        }
-        
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public GenderEnum Gender { get; set; }
+        public string Gender { get; set; }
         public string FavoriteColor { get; set; }
         public DateTime DateOfBirth { get; set; }
     }
