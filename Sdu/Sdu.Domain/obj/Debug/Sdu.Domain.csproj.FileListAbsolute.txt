@@ -2,4 +2,3 @@ c:\git\sdu\Sdu\Sdu.Domain\bin\Debug\Sdu.Domain.dll
 c:\git\sdu\Sdu\Sdu.Domain\bin\Debug\Sdu.Domain.pdb
 c:\git\sdu\Sdu\Sdu.Domain\obj\Debug\Sdu.Domain.dll
 c:\git\sdu\Sdu\Sdu.Domain\obj\Debug\Sdu.Domain.pdb
-c:\git\sdu\Sdu\Sdu.Domain\obj\Debug\Sdu.Domain.csprojResolveAssemblyReference.cache

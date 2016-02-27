@@ -85,6 +85,5 @@ c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.Security.Google.xml
 c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.Security.Twitter.xml
 c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\git\sdu\Sdu\Sdu.WebApi\bin\System.Web.Http.Owin.xml
-c:\git\sdu\Sdu\Sdu.WebApi\obj\Debug\Sdu.WebApi.csprojResolveAssemblyReference.cache
 c:\git\sdu\Sdu\Sdu.WebApi\obj\Debug\Sdu.WebApi.dll
 c:\git\sdu\Sdu\Sdu.WebApi\obj\Debug\Sdu.WebApi.pdb

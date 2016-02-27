@@ -1,0 +1,9 @@
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\Sdu.Data.IntegrationTests.dll
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\Sdu.Data.IntegrationTests.pdb
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\nunit.framework.dll
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\Sdu.Data.dll
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\Sdu.Data.pdb
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\bin\Debug\nunit.framework.xml
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\obj\Debug\Sdu.Data.IntegrationTests.csprojResolveAssemblyReference.cache
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\obj\Debug\Sdu.Data.IntegrationTests.dll
+c:\git\sdu\Sdu\Sdu.Data.IntegrationTests\obj\Debug\Sdu.Data.IntegrationTests.pdb

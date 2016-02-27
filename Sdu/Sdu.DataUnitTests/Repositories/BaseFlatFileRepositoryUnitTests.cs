@@ -424,12 +424,8 @@ namespace Sdu.DataUnitTests.Repositories
             var fp = new Moq.Mock<IFileProvider>();
 
             fp.Setup(aa => aa.LoadFileContents()).Returns(BigListOfFakeData_CSV);
-
             var sut = new CommaDelimitedDataRepository<Person>(fp.Object);
             Assert.That(sut.AsQueryable().Count() == 100, String.Format("expected 100 rows, got {0}", sut.AsQueryable().Count()));
-
-
-
         }
 
         [Test()]
