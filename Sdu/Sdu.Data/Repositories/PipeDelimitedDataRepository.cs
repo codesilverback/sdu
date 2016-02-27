@@ -22,30 +22,10 @@ namespace Sdu.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public override T ParseLine(string line)
-        {
-            var result = line.Split('|');
-            if (result[0] == "FirstName")
-            {
-                //header row, skip it.
-                return null;
-            }
+       public override string[] SplitLine(string line)
+       {
+           return line.Split('|');
+       }
 
-            //gross, but simple:
-
-            if (typeof(T) !=  typeof(Data.Models.Person)){
-                throw new NotImplementedException(String.Format("No implementation for repo of type {0}", typeof(T).Name));
-            }
-
-
-            //this is gross and bizarre and I don't like it.  But I really want to use IRepo<T>
-            return new Models.Person()
-            {
-                FirstName = result[0],
-                LastName = result[1],
-                Gender = result[2],
-                DateOfBirth = result[3]
-            } as T;
-        }
     }
 }
