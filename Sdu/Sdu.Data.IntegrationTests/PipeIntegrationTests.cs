@@ -40,7 +40,7 @@ namespace Sdu.Data.IntegrationTests
                 LastName = "Loblaw",
                 Gender = "male",
                 FavoriteColor = "indigo",
-                DateOfBirth = "10/22/2016"
+                DateOfBirth = new DateTime(1921, 10, 22)
             };
 
 

@@ -48,3 +48,7 @@ c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.xml
 c:\git\sdu\Sdu\Sdu.WebApi\bin\System.Web.Http.Owin.xml
 c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
 c:\git\sdu\Sdu\Sdu.WebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\git\sdu\Sdu\Sdu.WebApi\bin\Castle.Core.dll
+c:\git\sdu\Sdu\Sdu.WebApi\bin\Castle.Windsor.dll
+c:\git\sdu\Sdu\Sdu.WebApi\bin\Castle.Core.xml
+c:\git\sdu\Sdu\Sdu.WebApi\bin\Castle.Windsor.xml

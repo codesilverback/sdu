@@ -42,7 +42,7 @@ namespace Sdu.Data.IntegrationTests
                     LastName = "Loblaw",
                     Gender = "male",
                     FavoriteColor = "indigo",
-                    DateOfBirth = "10/22/2016"
+                    DateOfBirth = new DateTime(2016, 10, 22)
                 };
 
                 var sut = new CommaDelimitedDataRepository<Person>(new FileProvider(this.RunFilePath));
@@ -75,7 +75,7 @@ namespace Sdu.Data.IntegrationTests
                 LastName = "Fünke",
                 Gender = "male",
                 FavoriteColor = "red",
-                DateOfBirth = "10/21/1974"
+                DateOfBirth = new DateTime(1974, 10, 22)
             };
 
             using (var co = new ConsoleOutput())

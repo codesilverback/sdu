@@ -33,3 +33,12 @@ c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\System.Net.Http.Formatting.xml
 c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Newtonsoft.Json.xml
 c:\git\sdu\Sdu\Sdu.WebApiUnitTests\obj\Debug\Sdu.WebApiUnitTests.dll
 c:\git\sdu\Sdu\Sdu.WebApiUnitTests\obj\Debug\Sdu.WebApiUnitTests.pdb
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Sdu.WebApiUnitTests.dll.config
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Moq.dll
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Castle.Windsor.dll
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\System.Web.Http.WebHost.dll
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Castle.Core.dll
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Moq.xml
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Castle.Windsor.xml
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\System.Web.Http.WebHost.xml
+c:\git\sdu\Sdu\Sdu.WebApiUnitTests\bin\Debug\Castle.Core.xml

@@ -15,8 +15,7 @@ public class Person
      
         //obligatory
         //public string Quest { get; set; }  
-
-        //database doesn't know anything about data types, so string it is!
-        public string DateOfBirth { get; set; }
+         
+        public DateTime DateOfBirth { get; set; }
     }
 }

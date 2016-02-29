@@ -21,7 +21,7 @@ namespace Sdu.Data.Repositories
         {
             ValidateAddInput(value);
             var p = value as Person;
-            return String.Format("{0},{1},{2},{3},{4}", p.LastName, p.FirstName, p.Gender, p.FavoriteColor, p.DateOfBirth);
+            return String.Format("{0},{1},{2},{3},{4}", p.LastName, p.FirstName, p.Gender, p.FavoriteColor, p.DateOfBirth.ToShortDateString());
         }
 
     }

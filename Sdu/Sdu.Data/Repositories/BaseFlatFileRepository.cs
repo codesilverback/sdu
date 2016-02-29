@@ -85,7 +85,7 @@ namespace Sdu.Data.Repositories
                 FirstName= result[1].CleanedUp(),
                 Gender = result[2].CleanedUp().ToLowerInvariant(),
                 FavoriteColor = result[3].CleanedUp().ToLowerInvariant(),
-                DateOfBirth = result[4].CleanedUp(),
+                DateOfBirth = DateTime.Parse( result[4].CleanedUp()),
             } as T;
         }
 
