@@ -37,7 +37,15 @@ namespace Sdu.Data.IntegrationTests
             }
         }
 
-      
+        protected void VerifyPerson(BaseFlatFileRepository<Person> sut, Person p, int count)
+        {
+            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == p.LastName) == count);
+            Assert.That(sut.AsQueryable().Count(aa => aa.FirstName == p.FirstName) == count);
+            Assert.That(sut.AsQueryable().Count(aa => aa.FavoriteColor == p.FavoriteColor) == count);
+            Assert.That(sut.AsQueryable().Count(aa => aa.DateOfBirth == p.DateOfBirth) == count);
+            Assert.That(sut.AsQueryable().Count(aa => aa.Gender == p.Gender) == count);
+
+        }
 
     }
 }

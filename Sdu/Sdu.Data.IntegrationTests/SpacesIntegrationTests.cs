@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Sdu.Data.Models;
 using Sdu.Data.Repositories;
 using NUnit.Framework;
@@ -8,8 +9,7 @@ namespace Sdu.Data.IntegrationTests
 {
     [TestFixture]
     public class SpacesIntegrationTests :FileIntegrationTestsBase
-    {
-        private Guid _runId = System.Guid.NewGuid();
+    { 
        protected override string FileName{get { return "Spaces"; }
         }
 
@@ -40,10 +40,11 @@ namespace Sdu.Data.IntegrationTests
 
             var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(RunFilePath));
             sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 1);
+            VerifyPerson(sut,p,1);
             sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 2);
+            VerifyPerson(sut, p, 2);
         }
+
 
 
     }

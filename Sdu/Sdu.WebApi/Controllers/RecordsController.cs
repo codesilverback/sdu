@@ -12,7 +12,7 @@ namespace Sdu.WebApi.Controllers
 {
     public class RecordsController : ApiController
     {
-        [Route("/records/gender")]
+        [Route("records/gender")]
         [AcceptVerbs("get")]
         public IEnumerable<Person> Gender()
         {

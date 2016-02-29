@@ -21,15 +21,20 @@ namespace Sdu.WebApi
             HttpConfiguration httpConfiguration = new HttpConfiguration();
             Register(httpConfiguration);
             appBuilder.UseWebApi(httpConfiguration);
+
+
         }
 
         public static void Register(HttpConfiguration config)
-        {
+        {      // Web API routes
+            config.MapHttpAttributeRoutes();
+
             config.Routes.MapHttpRoute(
-                name: "Gender",
-                routeTemplate: "Gender",
-                defaults: new { controller = "Records", action = "Gender" }
-                );
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+            
         }
 
     }
