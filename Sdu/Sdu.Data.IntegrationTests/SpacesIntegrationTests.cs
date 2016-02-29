@@ -39,10 +39,8 @@ namespace Sdu.Data.IntegrationTests
 
 
             var sut = new SpaceDelimitedDataRepository<Person>(new FileProvider(RunFilePath));
-            sut.Insert(p);
-            VerifyPerson(sut,p,1);
-            sut.Insert(p);
-            VerifyPerson(sut, p, 2);
+            InsertAndVerify(sut, p, 100);
+
         }
 
 

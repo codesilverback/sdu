@@ -45,10 +45,8 @@ namespace Sdu.Data.IntegrationTests
 
 
             var sut = new PipeDelimitedDataRepository<Person>(new FileProvider(RunFilePath));
-            sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 1);
-            sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 2);
+            InsertAndVerify(sut, p, 100);
+
         }
     }
 }

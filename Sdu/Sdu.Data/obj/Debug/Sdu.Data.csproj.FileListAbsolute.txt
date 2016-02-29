@@ -2,3 +2,4 @@ c:\git\sdu\Sdu\Sdu.Data\bin\Debug\Sdu.Data.dll
 c:\git\sdu\Sdu\Sdu.Data\bin\Debug\Sdu.Data.pdb
 c:\git\sdu\Sdu\Sdu.Data\obj\Debug\Sdu.Data.dll
 c:\git\sdu\Sdu\Sdu.Data\obj\Debug\Sdu.Data.pdb
+c:\git\sdu\Sdu\Sdu.Data\obj\Debug\Sdu.Data.csprojResolveAssemblyReference.cache

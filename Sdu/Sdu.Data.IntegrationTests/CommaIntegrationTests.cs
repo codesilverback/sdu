@@ -26,6 +26,7 @@ namespace Sdu.Data.IntegrationTests
             Assert.That(sut.AsQueryable().Count() == 100, String.Format("expected 100 rows, got {0}", sut.AsQueryable().Count()));
 
         }
+
         [Test]
 
         public void SimpleInsert()
@@ -41,10 +42,8 @@ namespace Sdu.Data.IntegrationTests
 
 
             var sut = new CommaDelimitedDataRepository<Person>(new FileProvider(this.RunFilePath));
-            sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 1);
-            sut.Insert(p);
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == "Loblaw") == 2);
+
+            InsertAndVerify(sut, p, 100);
         }
 
 
