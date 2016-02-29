@@ -3,9 +3,12 @@ using Sdu.WebApi.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.Controllers;
+using Moq;
 using Sdu.Data.Models;
 using Sdu.Data.Repositories;
 using Sdu.WebApi.Models;
@@ -122,5 +125,31 @@ var result =             controller.Gender();
             Assert.That(CastIt(result).First().FirstName == "Bob");
             Assert.That(CastIt(result).Last().FirstName == "Lucille");
         }
+
+
+        [Test()]
+        public void PostUnitTest()
+        {
+            var mockFileProvider = new Mock<IFileProvider>();
+            mockFileProvider.Setup(aa => aa.AppendLineToFile(It.IsAny<string>()));
+            var repo = new SpaceDelimitedDataRepository<Person>(mockFileProvider.Object);
+
+             var rec = new Record()
+            {
+                FirstName = "Bob",
+                LastName = "Loblaw",
+                Gender = "male",
+                FavoriteColor = "indigo",
+                DateOfBirth = new DateTime(2016, 10, 22)
+            };
+
+            var controller = new RecordsController(repo);
+            var response = controller.Post(rec);
+
+            mockFileProvider.Verify(aa => aa.AppendLineToFile(It.IsAny<string>()), Times.Once);
+            mockFileProvider.Verify(aa => aa.AppendLineToFile(It.Is<string>(bb => bb == "\"Loblaw\" \"Bob\" \"male\" \"indigo\" \"10/22/2016\"")));
+             
+        }
+      
     }
 }

@@ -69,16 +69,32 @@ namespace Sdu.WebApi.Controllers
 
         [Route("records")]
         [AcceptVerbs("Post")]
-        public void Post([FromBody] Models.Record value)
+        public HttpResponseMessage Post(Models.Record value)
         {
-            var p = new Person();
-            p.FirstName = value.FirstName;
-            p.LastName = value.LastName;
-            p.Gender = value.Gender;
-            p.FavoriteColor = value.FavoriteColor;
-            p.DateOfBirth = value.DateOfBirth;
-            _recordsRepository.Insert(p);
 
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var p = new Person();
+                    p.FirstName = value.FirstName;
+                    p.LastName = value.LastName;
+                    p.Gender = value.Gender;
+                    p.FavoriteColor = value.FavoriteColor;
+                    p.DateOfBirth = value.DateOfBirth;
+                    _recordsRepository.Insert(p);
+                   return  new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new  HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
+            catch (Exception)
+            {
+
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
         }
 
     }
