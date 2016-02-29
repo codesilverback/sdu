@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sdu.Data.Helpers;
 
 namespace Sdu.Data.Repositories
 {
@@ -12,6 +13,7 @@ namespace Sdu.Data.Repositories
     public class FileProvider : IFileProvider
     {
         string _filePath = String.Empty;
+
         public FileProvider(string path)
         {
             _filePath = path;
@@ -21,9 +23,16 @@ namespace Sdu.Data.Repositories
         {
             return System.IO.File.ReadAllLines(_filePath);
         }
+
         public void AppendLineToFile(string line)
         {
-            System.IO.File.AppendAllLines(_filePath, new List<string>() { Environment.NewLine + line.Replace(Environment.NewLine,String.Empty) });
+            Helpers.CommonHelpers.TryItNTimes(new Func<int>(() =>
+            {
+
+                System.IO.File.AppendAllLines(_filePath,
+                    new List<string>() {Environment.NewLine + line.Replace(Environment.NewLine, String.Empty)});
+                return 0;
+            }), ConfigHelper.GetAppSetting("lockedFileRetryAttempts",100), ConfigHelper.GetAppSetting("lockedFileTimeOutMilleseconds", 100));
         }
     }
 }

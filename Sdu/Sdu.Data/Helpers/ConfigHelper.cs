@@ -44,7 +44,6 @@ namespace Sdu.Data.Helpers
 
                 return defaultValue;
             }
-
             
         }
     }

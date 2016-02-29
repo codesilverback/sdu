@@ -51,7 +51,7 @@ namespace Sdu.Data.Repositories
 
             if (typeof(T) != typeof(Person))
             {
-                throw new NotImplementedException(String.Format("repo only works for People, you provided {0}",
+                throw new NotImplementedException(String.Format("This repo only works for People, you provided {0}.",
                     typeof(T).Name));
             }
         }

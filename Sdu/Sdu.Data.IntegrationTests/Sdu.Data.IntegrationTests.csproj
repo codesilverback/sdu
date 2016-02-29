@@ -37,6 +37,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleOutput.cs" />
     <Compile Include="FileIntegrationTestsBase.cs" />
     <Compile Include="SpacesIntegrationTests.cs" />
     <Compile Include="CommaIntegrationTests.cs" />
@@ -57,6 +58,7 @@
     <Content Include="Files\Spaces.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

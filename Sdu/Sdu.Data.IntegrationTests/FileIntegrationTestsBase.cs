@@ -37,18 +37,28 @@ namespace Sdu.Data.IntegrationTests
             }
         }
 
-        protected void VerifyPerson(BaseFlatFileRepository<Person> sut, Person p, int count)
+        protected void VerifyPerson(BaseFlatFileRepository<Person> sut, Person p, int count, ConsoleOutput co = null)
         {
-            Assert.That(sut.AsQueryable().Count(aa => aa.LastName == p.LastName &&   aa.FirstName == p.FirstName &&   aa.FavoriteColor == p.FavoriteColor  &&   aa.DateOfBirth == p.DateOfBirth &&  aa.Gender == p.Gender) == count);
 
+var  test = new Func<Person, bool>(aa => aa.LastName == p.LastName && aa.FirstName == p.FirstName && aa.FavoriteColor == p.FavoriteColor && aa.DateOfBirth == p.DateOfBirth && aa.Gender == p.Gender);
+            var actualCount = sut.AsQueryable().Count(test);
+            if (co == null)
+            {
+                Assert.That(actualCount == count, String.Format("Fail! Expected {0} got {1}", count,actualCount));
+            }
+            else
+            {
+
+                Assert.That(actualCount == count, String.Format("Fail! Expected {0} got {1}", count, actualCount) + Environment.NewLine + co.GetOuput());
+            }
         }
 
-        protected void InsertAndVerify(BaseFlatFileRepository<Person> sut, Person p, int count)
+        protected void InsertAndVerify(BaseFlatFileRepository<Person> sut, Person p, int count, ConsoleOutput co =null )
         {
             for (var i = 0; i < count; i++)
             {
                 sut.Insert(p);
-                VerifyPerson(sut, p, i + 1);
+                VerifyPerson(sut, p, i + 1, co);
             }
         }
 
