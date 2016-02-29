@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdu.Data.IntegrationTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdu.WebApi", "Sdu.WebApi\Sdu.WebApi.csproj", "{4C26669B-2B78-4C0D-A966-98E54F97A8B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdu.WebApiUnitTests", "Sdu.WebApiUnitTests\Sdu.WebApiUnitTests.csproj", "{9960AAF0-B220-41E7-96A6-AE53D501C2CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4C26669B-2B78-4C0D-A966-98E54F97A8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C26669B-2B78-4C0D-A966-98E54F97A8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C26669B-2B78-4C0D-A966-98E54F97A8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9960AAF0-B220-41E7-96A6-AE53D501C2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9960AAF0-B220-41E7-96A6-AE53D501C2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9960AAF0-B220-41E7-96A6-AE53D501C2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9960AAF0-B220-41E7-96A6-AE53D501C2CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
