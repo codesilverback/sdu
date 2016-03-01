@@ -18,7 +18,7 @@ namespace Sdu.Console
             if (!args.Any())
             {
                 System.Console.Write("please select commas, pipes or spaces, followed by gender, DOB, or lastname.");
-
+                return;
             }
 
             switch (args[0])
