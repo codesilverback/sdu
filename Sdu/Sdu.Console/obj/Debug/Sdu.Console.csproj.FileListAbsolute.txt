@@ -1,0 +1,8 @@
+c:\git\sdu\Sdu\Sdu.Console\bin\Debug\Sdu.Console.exe.config
+c:\git\sdu\Sdu\Sdu.Console\bin\Debug\Sdu.Console.exe
+c:\git\sdu\Sdu\Sdu.Console\bin\Debug\Sdu.Console.pdb
+c:\git\sdu\Sdu\Sdu.Console\bin\Debug\Sdu.Data.dll
+c:\git\sdu\Sdu\Sdu.Console\bin\Debug\Sdu.Data.pdb
+c:\git\sdu\Sdu\Sdu.Console\obj\Debug\Sdu.Console.csprojResolveAssemblyReference.cache
+c:\git\sdu\Sdu\Sdu.Console\obj\Debug\Sdu.Console.exe
+c:\git\sdu\Sdu\Sdu.Console\obj\Debug\Sdu.Console.pdb
